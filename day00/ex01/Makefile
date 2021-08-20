@@ -29,7 +29,8 @@ HEADERS_DIR	=	header
 #                               Sources filenames                              #
 ################################################################################
 
-SRCS		=	main.cpp Contact.class.cpp Phonebook.class.cpp
+SRCS		=	main.cpp Contact.class.cpp Phonebook.class.cpp\
+				fiddlewphonebook.cpp
 
 ################################################################################
 #                              Commands and arguments                          #

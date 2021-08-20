@@ -21,7 +21,7 @@ int	Phonebook::setindex(int i) {
 		return (0);
 	if (i < 8)
 		this->m_index++;
-	else if (i >= 8)
+	else if (i == 8)
 		this->m_index = 0;
 	return (1);
 }

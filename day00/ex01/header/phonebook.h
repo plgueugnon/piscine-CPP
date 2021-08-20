@@ -14,8 +14,6 @@
 #define BLU		"\033[0;34m"
 #define YEL		"\033[0;33m"
 
-int	error_prompt(std::string str);
-
 typedef enum	e_contact_input {
 
 	first_name,
@@ -24,5 +22,10 @@ typedef enum	e_contact_input {
 	phone_number,
 	darkest_secret,
 }				t_contact_input;
+
+void	prompt(std::string str);
+int		add_a_contact(Phonebook *pbk);
+int		search_contact(Phonebook *pbk);
+void	display_contact(Phonebook *pbk);
 
 #endif
