@@ -20,24 +20,24 @@ NAME		=	account
 #                         Sources and objects directories                      #
 ################################################################################
 
-SRCS_DIR	=	srcs
+SRCS_DIR	=	.
 OBJS_DIR	=	objs
 LIBFT_MAKE	=	Makefile
-HEADERS_DIR	=	header
+#HEADERS_DIR	=	header
 
 ################################################################################
 #                               Sources filenames                              #
 ################################################################################
 
-SRCS		=	tests.cpp
+SRCS		=	tests.cpp Account.cpp
 
 ################################################################################
 #                              Commands and arguments                          #
 ################################################################################
 
 CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror -g3 -std=c++98 -I$(HEADERS_DIR)
-LDFLAGS		=	-L .
+CFLAGS		=	-Wall -Wextra -Werror -g3 -std=c++98 #-I$(HEADERS_DIR)
+#LDFLAGS		=	-L .
 RM			=	rm -f
 
 ################################################################################
@@ -71,7 +71,7 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp
 
 $(NAME):	$(OBJS)
 			@ echo "\t$(_YELLOW)[Creating program]$(_NC)"
-			$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+			$(CC) $(OBJS) -o $(NAME)
 			@ echo "$(_GREEN)[program created & ready]$(_NC)"
 
 clean:
