@@ -14,7 +14,7 @@
 #                               Filename output                                #
 ################################################################################
 
-NAME		=	account
+NAME		=	zombie
 
 ################################################################################
 #                         Sources and objects directories                      #
@@ -23,21 +23,19 @@ NAME		=	account
 SRCS_DIR	=	.
 OBJS_DIR	=	objs
 LIBFT_MAKE	=	Makefile
-#HEADERS_DIR	=	header
 
 ################################################################################
 #                               Sources filenames                              #
 ################################################################################
 
-SRCS		=	tests.cpp Account.cpp
+SRCS		=	main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 ################################################################################
 #                              Commands and arguments                          #
 ################################################################################
 
 CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror -g3 -std=c++98 #-I$(HEADERS_DIR)
-#LDFLAGS		=	-L .
+CFLAGS		=	-Wall -Wextra -Werror -g3 -std=c++98
 RM			=	rm -f
 
 ################################################################################
