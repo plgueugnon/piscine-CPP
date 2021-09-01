@@ -28,7 +28,7 @@ LIBFT_MAKE	=	Makefile
 #                               Sources filenames                              #
 ################################################################################
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp Karen.cpp
 
 ################################################################################
 #                              Commands and arguments                          #
