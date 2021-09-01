@@ -1,16 +1,14 @@
 #include "Karen.hpp"
 
-int	main(int argc, char **argv) {
+int	main( void ) {
 
-	if (argc == 2)
-	{
-		Karen	instance;
-		instance.complain(argv[1]);
-		return ( 0 );
-	}
-	std::cerr << "Error: choose one of DEBUG | INFO | WARNING | ERROR as input" << std::endl;
+	Karen	instance;
+	instance.complain("DEBUG");
+	instance.complain("INFO");
+	instance.complain("WARNING");
+	instance.complain("ERROR");
 
-	return ( 1 );
+	return ( 0 );
 }
 
 
