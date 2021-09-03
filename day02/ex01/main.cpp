@@ -7,7 +7,10 @@ int main( void ) {
 	Fixed const c(42.42f);
 	Fixed const d(b);
 
-	a = Fixed(1234.4321f);
+	a = Fixed(1234.4321f); // assignation vers nouvel objet de classe => destruction aussitot apres de rhs
+	// a = Fixed(10.5f);
+	// std::cout << sizeof(int) << std::endl;
+	// std::cout << sizeof(float) << std::endl;
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
