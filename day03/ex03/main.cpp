@@ -1,5 +1,6 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+// #include "ScavTrap.hpp"
+// #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main( void ) {
 
@@ -31,7 +32,7 @@ int	main( void ) {
 	std::cout << std::endl;
 	std::cout << std::endl;
 
-	FragTrap        Lilith("Lilith");
+	FragTrap	Lilith("Lilith");
 	std::cout << Lilith.getName() << " has " << Lilith.getHitpoints() << " points of life left !" << std::endl;
 	Lilith.attack("wall");
 	Lilith.takeDamage(60);
@@ -43,6 +44,16 @@ int	main( void ) {
 
 	std::cout << std::endl;
 	std::cout << std::endl;
+
+	DiamondTrap	Belzebuth("Belzebuth");
+	// Belzebuth.attack("nothing");
+	Belzebuth.guardGate();
+	Belzebuth.highFivesGuys();
+	Belzebuth.whoAmI();
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+
 
 	return ( 0 );
 }

@@ -28,14 +28,14 @@ LIBFT_MAKE	=	Makefile
 #                               Sources filenames                              #
 ################################################################################
 
-SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 ################################################################################
 #                              Commands and arguments                          #
 ################################################################################
 
 CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror -g3 -std=c++98 -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -Wshadow -Wno-shadow -g3 -std=c++98 -fsanitize=address
 RM			=	rm -f
 
 ################################################################################
