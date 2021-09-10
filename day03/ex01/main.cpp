@@ -18,7 +18,6 @@ int	main( void ) {
 	std::cout << std::endl;
 
 	ScavTrap	Dumdum("Dumdum");
-	std::cout << Dumdum.getName() << " has " << Dumdum.getHitpoints() << " points of life left !" << std::endl;
 	Dumdum.attack("stone");
 	Dumdum.takeDamage(30);
 	std::cout << Dumdum.getName() << " has " << Dumdum.getHitpoints() << " points of life left !" << std::endl;

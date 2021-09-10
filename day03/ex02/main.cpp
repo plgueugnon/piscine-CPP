@@ -19,7 +19,6 @@ int	main( void ) {
 	std::cout << std::endl;
 
 	ScavTrap	Dumdum("Dumdum");
-	std::cout << Dumdum.getName() << " has " << Dumdum.getHitpoints() << " points of life left !" << std::endl;
 	Dumdum.attack("stone");
 	Dumdum.takeDamage(30);
 	std::cout << Dumdum.getName() << " has " << Dumdum.getHitpoints() << " points of life left !" << std::endl;
@@ -32,7 +31,6 @@ int	main( void ) {
 	std::cout << std::endl;
 
 	FragTrap        Lilith("Lilith");
-	std::cout << Lilith.getName() << " has " << Lilith.getHitpoints() << " points of life left !" << std::endl;
 	Lilith.attack("wall");
 	Lilith.takeDamage(60);
 	std::cout << Lilith.getName() << " has " << Lilith.getHitpoints() << " points of life left !" << std::endl;

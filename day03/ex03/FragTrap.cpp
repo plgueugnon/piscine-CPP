@@ -18,15 +18,8 @@ FragTrap::~FragTrap( void ) {
 FragTrap	&FragTrap::operator=( FragTrap const &rhs ) {
 
 	std::cout << "(ScavTrap assignement operator called)" << std::endl;
-	if ( this == &rhs )
-		return ( *this );
-	else
-	{
-		this->setAttackDamage(rhs.getAttackDamage()); 
-		this->setEnergyPoints(rhs.getEnergyPoints());
-		this->setHitpoints(rhs.getHitpoints());
-		this->setName(rhs.getName());
-	}
+	if (this != &rhs )
+		ClapTrap::operator=(rhs);
 	return ( *this );
 }
 
@@ -51,9 +44,15 @@ void	FragTrap::highFivesGuys( void ) {
 FragTrap::FragTrap( std::string str ) : ClapTrap( str ) {
 
 	std::cout << "Ho no ! A ScavTrap " << FragTrap::getName() << " appeared ! ( Constructor called)" << std::endl;
-	setAttackDamage(30); // equivalent a appeler ptr this->
-	setEnergyPoints(100);
-	setHitpoints(100);
+	_AttackDamage = 30;
+	_HitPoints = 100;
+	_EnergyPoints = 100;
+
+	std::cout << "......................................" << std::endl;
+	std::cout << getName() << " has " << getHitpoints() << " health points !" << std::endl;
+	std::cout << getName() << " has " << getEnergyPoints() << " energy points !" << std::endl;
+	std::cout << getName() << " has " << getAttackDamage() << " attack points !" << std::endl;
+	std::cout << "......................................" << std::endl;
 
 	return ;
 }

@@ -36,7 +36,7 @@ public:
 	void	setEnergyPoints( unsigned int );
 	void	setAttackDamage( unsigned int );
 
-private:
+protected:
 
 	std::string	_name;
 	unsigned int	_HitPoints;

@@ -37,7 +37,7 @@ public:
 	void	setAttackDamage( unsigned int );
 
 // it would be easier to have all here as protected to avoid the limitation of private (and the use of getter and setter)
-private: 
+protected: 
 
 	std::string	_name;
 	unsigned int	_HitPoints;

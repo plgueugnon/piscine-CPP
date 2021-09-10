@@ -19,15 +19,8 @@ ScavTrap::~ScavTrap( void ) {
 ScavTrap	&ScavTrap::operator=( ScavTrap const &rhs ) {
 
 	std::cout << "(ScavTrap assignement operator called)" << std::endl;
-	if (this == &rhs )
-		return ( *this );
-	else
-	{
-		this->setAttackDamage(rhs.getAttackDamage()); 
-		this->setEnergyPoints(rhs.getEnergyPoints());
-		this->setHitpoints(rhs.getHitpoints());
-		this->setName(rhs.getName());
-	}
+	if (this != &rhs )
+		ClapTrap::operator=(rhs);
 	return ( *this );
 }
 
@@ -52,9 +45,15 @@ void	ScavTrap::guardGate( void ) {
 ScavTrap::ScavTrap( std::string str ) : ClapTrap( str ) {
 
 	std::cout << "Ho no ! A ScavTrap " << ScavTrap::getName() << " appeared ! ( Constructor called)" << std::endl;
-	this->setAttackDamage(20);
-	this->setEnergyPoints(50);
-	this->setHitpoints(100);
+	_AttackDamage = 20;
+	_HitPoints = 100;
+	_EnergyPoints = 50;
+
+	std::cout << "......................................" << std::endl;
+	std::cout << getName() << " has " << getHitpoints() << " health points !" << std::endl;
+	std::cout << getName() << " has " << getEnergyPoints() << " energy points !" << std::endl;
+	std::cout << getName() << " has " << getAttackDamage() << " attack points !" << std::endl;
+	std::cout << "......................................" << std::endl;
 
 	return ;
 }

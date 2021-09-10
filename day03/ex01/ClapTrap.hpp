@@ -36,7 +36,8 @@ public:
 	void	setEnergyPoints( unsigned int );
 	void	setAttackDamage( unsigned int );
 
-private:
+// heritage par les classes filles mais pas accessibles depuis l'exterieur comme public
+protected:
 
 	std::string	_name;
 	unsigned int	_HitPoints;
