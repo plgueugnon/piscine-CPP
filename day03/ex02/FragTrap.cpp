@@ -10,7 +10,7 @@ FragTrap::FragTrap( void ) {
 
 FragTrap::~FragTrap( void ) {
 
-	std::cout << "FragTrap " << this->getName() << " finally died thank god !"<< "(Destructor called)" << std::endl;
+	std::cout << "FragTrap " << _name << " finally died thank god !"<< "(Destructor called)" << std::endl;
 
 	return ;
 }
@@ -43,15 +43,15 @@ void	FragTrap::highFivesGuys( void ) {
 
 FragTrap::FragTrap( std::string str ) : ClapTrap( str ) {
 
-	std::cout << "Ho no ! A ScavTrap " << FragTrap::getName() << " appeared ! ( Constructor called)" << std::endl;
+	std::cout << "Ho no ! A ScavTrap " << _name << " appeared ! ( Constructor called)" << std::endl;
 	_AttackDamage = 30;
 	_HitPoints = 100;
 	_EnergyPoints = 100;
 
 	std::cout << "......................................" << std::endl;
-	std::cout << getName() << " has " << getHitpoints() << " health points !" << std::endl;
-	std::cout << getName() << " has " << getEnergyPoints() << " energy points !" << std::endl;
-	std::cout << getName() << " has " << getAttackDamage() << " attack points !" << std::endl;
+	std::cout << _name << " has " << _HitPoints << " health points !" << std::endl;
+	std::cout << _name << " has " << _EnergyPoints << " energy points !" << std::endl;
+	std::cout << _name << " has " << _AttackDamage << " attack points !" << std::endl;
 	std::cout << "......................................" << std::endl;
 
 	return ;

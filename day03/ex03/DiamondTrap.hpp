@@ -25,5 +25,4 @@ private:
 
 };
 
-
 #endif // __DIAMONDTRAP_H__

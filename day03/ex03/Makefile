@@ -35,7 +35,7 @@ SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 ################################################################################
 
 CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror -Wshadow -Wno-shadow -g3 -std=c++98 -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -Wshadow -Wno-shadow -g3 -std=c++98
 RM			=	rm -f
 
 ################################################################################
@@ -69,7 +69,7 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp
 
 $(NAME):	$(OBJS)
 			@ echo "\t$(_YELLOW)[Creating program]$(_NC)"
-			$(CC) $(OBJS) -o $(NAME) -fsanitize=address
+			$(CC) $(OBJS) -o $(NAME)
 			@ echo "$(_GREEN)[program created & ready]$(_NC)"
 
 clean:

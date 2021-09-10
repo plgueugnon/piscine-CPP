@@ -50,9 +50,9 @@ ScavTrap::ScavTrap( std::string str ) : ClapTrap( str ) {
 	_EnergyPoints = 50;
 
 	std::cout << "......................................" << std::endl;
-	std::cout << getName() << " has " << getHitpoints() << " health points !" << std::endl;
-	std::cout << getName() << " has " << getEnergyPoints() << " energy points !" << std::endl;
-	std::cout << getName() << " has " << getAttackDamage() << " attack points !" << std::endl;
+	std::cout << _name << " has " << _HitPoints << " health points !" << std::endl;
+	std::cout << _name << " has " << _EnergyPoints << " energy points !" << std::endl;
+	std::cout << _name << " has " << _AttackDamage << " attack points !" << std::endl;
 	std::cout << "......................................" << std::endl;
 
 	return ;

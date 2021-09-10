@@ -10,7 +10,7 @@ DiamondTrap::DiamondTrap( void ) {
 
 DiamondTrap::~DiamondTrap( void ) {
 
-	std::cout << "DiamondTrap " << this->getName() << " finally died thank god !"<< "(Destructor called)" << std::endl;
+	std::cout << "DiamondTrap " << _name << " finally died thank god !"<< "(Destructor called)" << std::endl;
 	return ;
 }
 
@@ -18,15 +18,8 @@ DiamondTrap::~DiamondTrap( void ) {
 DiamondTrap	&DiamondTrap::operator=( DiamondTrap const &rhs ) {
 
 	std::cout << "(DiamondTrap assignement operator called)" << std::endl;
-	if (this == &rhs )
-		return ( *this );
-	else
-	{
-		this->setAttackDamage(rhs.getAttackDamage()); 
-		this->setEnergyPoints(rhs.getEnergyPoints());
-		this->setHitpoints(rhs.getHitpoints());
-		this->setName(rhs.getName());
-	}
+	if (this != &rhs )
+		ClapTrap::operator=(rhs);
 	return ( *this );
 }
 
@@ -39,26 +32,26 @@ DiamondTrap::DiamondTrap( DiamondTrap const &src ) {
 }
 
 // : ClapTrap( str + "_clap_name" ) = concat
-DiamondTrap::DiamondTrap( std::string str ) : ClapTrap( str + "_clap_name" ) {
+DiamondTrap::DiamondTrap( std::string str ) : ClapTrap( str + "_clap_name"), _name(str) {
 
-	// ClapTrap::setName(ClapTrap::getName() + "_clap_name"); // a tester
-	this->setHitpoints(FragTrap::getHitpoints());
-	this->setEnergyPoints(ScavTrap::getEnergyPoints());
-	this->setAttackDamage(FragTrap::getAttackDamage());
+	_HitPoints = 100; // oblige inscrire en dur sinon prendra les valeurs de ClapTrap
+	_EnergyPoints = 50;
+	_AttackDamage = 30;
 
 	std::cout << "......................................" << std::endl;
-	std::cout << getName() << " has " << getHitpoints() << " health points !" << std::endl;
-	std::cout << getName() << " has " << getEnergyPoints() << " energy points !" << std::endl;
-	std::cout << getName() << " has " << getAttackDamage() << " attack points !" << std::endl;
+	std::cout << _name << " has " << _HitPoints << " health points !" << std::endl;
+	std::cout << _name << " has " << _EnergyPoints << " energy points !" << std::endl;
+	std::cout << _name << " has " << _AttackDamage << " attack points !" << std::endl;
 	std::cout << "......................................" << std::endl;
 
 	return ;
 }
 
+ // ici on fait appel a la variable _name de diamondTrap qui "shadow" la _name de la class ClapTrap
 void	DiamondTrap::whoAmI( void ) {
 
 	std::cout << "As ClapTrap my name is " << ClapTrap::getName();
-	std::cout << " and as DiamondTrap my name is " << this->getName() << std::endl;
+	std::cout << " and as DiamondTrap my name is " << DiamondTrap::_name << std::endl;
 
 	return ;
 }
