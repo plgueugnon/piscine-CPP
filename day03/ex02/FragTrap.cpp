@@ -18,8 +18,8 @@ FragTrap::~FragTrap( void ) {
 FragTrap	&FragTrap::operator=( FragTrap const &rhs ) {
 
 	std::cout << "(ScavTrap assignement operator called)" << std::endl;
-	if (this != &rhs )
-		ClapTrap::operator=(rhs);
+	if ( this != &rhs )
+		ClapTrap::operator=( rhs );
 	return ( *this );
 }
 

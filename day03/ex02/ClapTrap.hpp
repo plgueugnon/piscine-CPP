@@ -20,7 +20,6 @@ public:
 
 	/* Non canonical */
 	ClapTrap( std::string str );
-	
 
 	void	attack( std::string const &target );
 	void	takeDamage( unsigned int amount );
