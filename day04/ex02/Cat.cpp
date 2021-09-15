@@ -31,7 +31,7 @@ Cat	&Cat::operator=( Cat const &rhs ) {
 	std::cout << "Cat equal operator called" << std::endl;
 	if ( this != &rhs )
 	{
-		Animal::operator=( rhs );
+		_type = rhs._type;
 		*_brain = *rhs._brain;
 	}
 
