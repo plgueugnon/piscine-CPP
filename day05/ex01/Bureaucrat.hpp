@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
+
+class Form; // forward declaration
 
 class Bureaucrat {
 
@@ -21,7 +24,7 @@ public:
 	int	getGrade( void ) const;
 	void	incrementGrade( void );
 	void	lowerGrade( void );
-	void	signForm( void ); // a modifier pour prendre un &form
+	void	signForm( Form &f ); // a modifier pour prendre un &form
 
 	class GradeTooHighException; // forward declaration
 	class GradeTooLowException;

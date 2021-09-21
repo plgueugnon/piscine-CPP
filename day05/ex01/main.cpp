@@ -1,25 +1,20 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main( void ) {
 
 	Bureaucrat	robert("robert", 150);
 	Bureaucrat	gerard("gerard", 2);
-
 	std::cout << robert;
 	std::cout << gerard;
 
-	robert.lowerGrade();
-	robert.incrementGrade();
+	Form	cerfa("cerfa", 3, 150);
+	Form	cerfi("cerfi", 2, 151);
+	std::cout << cerfa;
+	std::cout << cerfi;
 
-	std::cout << robert;
-
-	gerard.incrementGrade();
-	std::cout << gerard;
-	gerard.incrementGrade();
-	std::cout << gerard;
-
-	Bureaucrat	unknown("unknown", 200);
-	std::cout << unknown.getGrade() << std::endl;
+	cerfa.beSigned(robert);
+	cerfa.beSigned(gerard);
 
 	return ( 0 );
 }

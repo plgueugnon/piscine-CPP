@@ -43,11 +43,11 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name) {
 		else
 			_grade = grade;
 	}
-	catch(const Bureaucrat::GradeTooLowException &e )
+	catch( const Bureaucrat::GradeTooLowException &e )
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Bureaucrat::GradeTooHighException &e )
+	catch( const Bureaucrat::GradeTooHighException &e )
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -99,21 +99,37 @@ void	Bureaucrat::lowerGrade( void ) {
 	return ;
 }
 
-void	signForm( void ); // a completer avec try catch
+void	Bureaucrat::signForm( Form &f ) {
+
+	try
+	{
+		if ( f.getSignGrade() < getGrade() )
+		{
+			std::cout << getName() << " cannot sign " << f.getName() << " because ";
+			throw Bureaucrat::GradeTooLowException();
+		}
+		else
+			std::cout << getName() << " signs " << f.getName() << std::endl;
+	}
+	catch(const Bureaucrat::GradeTooLowException &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	return ;
+}
 
 const char	*Bureaucrat::GradeTooHighException::what( void ) const throw() {
 
-	return ( "ERROR: grade too high" );
+	return ( "ERROR: bureaucrat - grade too high" );
 }
 
 const char	*Bureaucrat::GradeTooLowException::what( void ) const throw() {
 
-	return ( "ERROR: grade too low" );
+	return ( "ERROR: bureaucrat - grade too low" );
 }
 
 std::ostream	&operator<<( std::ostream &os, Bureaucrat &bureaucrat ) {
 
-	std::cout << bureaucrat.getName() << " bureaucrat grade " << bureaucrat.getGrade() << std::endl;
-
-	return ( os );
+	return ( os << bureaucrat.getName() << " bureaucrat grade " << bureaucrat.getGrade() << std::endl );
 }

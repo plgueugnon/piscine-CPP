@@ -6,6 +6,8 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat; // forward declaration
+
 class Form {
 
 public:
@@ -19,7 +21,11 @@ public:
 	/* Non canonical */
 	Form( std::string name, int signlvl, int execlvl );
 	std::string const	getName( void ) const;
-	void	beSigned( Bureaucrat const &b );
+	int	getSignGrade( void ) const;
+	int	getExecGrade( void ) const;
+	bool	getSigningStatus( void ) const;
+
+	void	beSigned( Bureaucrat &b );
 
 	class GradeTooHighException; // forward declaration
 	class GradeTooLowException;
