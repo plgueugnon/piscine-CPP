@@ -6,7 +6,7 @@
 /*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 11:52:32 by pgueugno          #+#    #+#             */
-/*   Updated: 2021/11/20 11:52:33 by pgueugno         ###   ########.fr       */
+/*   Updated: 2021/11/20 12:13:15 by pgueugno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0)
 }
 
 /* Constructor and destructor work on LIFO base meaning here we start with index 7 */
+/* result may differ based on the OS */
 
 Account::~Account(void) {
 
