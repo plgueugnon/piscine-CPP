@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pgueugno <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/01/21 14:58:12 by pgueugno          #+#    #+#              #
-#    Updated: 2021/08/11 13:07:06 by pgueugno         ###   ########.fr        #
+#    Created: 2021/11/20 11:59:30 by pgueugno          #+#    #+#              #
+#    Updated: 2021/11/20 11:59:46 by pgueugno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ NAME		=	account
 SRCS_DIR	=	.
 OBJS_DIR	=	objs
 LIBFT_MAKE	=	Makefile
-#HEADERS_DIR	=	header
 
 ################################################################################
 #                               Sources filenames                              #
@@ -36,8 +35,7 @@ SRCS		=	tests.cpp Account.cpp
 ################################################################################
 
 CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror -g3 -std=c++98 #-I$(HEADERS_DIR)
-#LDFLAGS		=	-L .
+CFLAGS		=	-Wall -Wextra -Werror -g3 -std=c++98
 RM			=	rm -f
 
 ################################################################################

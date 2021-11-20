@@ -7,11 +7,8 @@
 //                                                                            //
 // ************************************************************************** //
 
-// pragma once est equivalent a ifndef / define / endif mais
-// ne fonctionne pas sur toutes les distrib
-// permet de gagner du temps de compilation
-// a ne pas utiliser si le header doit etre inclus par plusieurs fichiers
-#pragma once 
+
+#pragma once
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
@@ -23,8 +20,7 @@ class Account {
 
 
 public:
-	// equivalent a ecrire typedef struct s_x {} t_x;
-	// on donne ici a class Account un alias t
+
 	typedef Account		t;
 
 	static int	getNbAccounts( void );
@@ -56,7 +52,7 @@ private:
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
-	Account( void ); // surcharge constructeur
+	Account( void );
 
 };
 

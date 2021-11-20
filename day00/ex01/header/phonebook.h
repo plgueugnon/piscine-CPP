@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/20 11:24:47 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/20 11:24:48 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
@@ -6,8 +18,8 @@
 #include <string>
 #include <locale>
 
-#include "Contact.class.hpp"
-#include "Phonebook.class.hpp"
+#include "Contact.hpp"
+#include "Phonebook.hpp"
 
 #define RST		"\033[0m"
 #define RED		"\033[0;31m"

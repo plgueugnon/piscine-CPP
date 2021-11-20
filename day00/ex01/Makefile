@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pgueugno <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/21 14:58:12 by pgueugno          #+#    #+#              #
-#    Updated: 2021/08/11 13:07:06 by pgueugno         ###   ########.fr        #
+#    Updated: 2021/11/20 11:24:23 by pgueugno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,7 @@ HEADERS_DIR	=	header
 #                               Sources filenames                              #
 ################################################################################
 
-SRCS		=	main.cpp Contact.class.cpp Phonebook.class.cpp\
-				fiddlewphonebook.cpp
+SRCS		=	main.cpp Contact.cpp Phonebook.cpp fiddlewphonebook.cpp
 
 ################################################################################
 #                              Commands and arguments                          #

@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/20 11:52:32 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/20 11:52:33 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
 
 Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) {
 
 	Account::_displayTimestamp();
-	this->_accountIndex = Account::_nbAccounts; // attribut non membre => acces avec nom class et non this
+	this->_accountIndex = Account::_nbAccounts;
 	Account::_nbAccounts++;
 	Account::_totalAmount += initial_deposit;
 	std::cout << "index:" << this->_accountIndex\
@@ -13,17 +25,12 @@ Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0)
 	return ;
 }
 
-// Account::Account(void) { // surcharge constructeur => est passe si pas de param => a priori sert a rien ?
+/* Constructor and destructor work on LIFO base meaning here we start with index 7 */
 
-// 	return ;
-// }
-
-// un point interessant ici => constructor / destructor => fonctionnement LIFO
-// ici on commence par l'index 7 automatiquement
 Account::~Account(void) {
 
 	Account::_displayTimestamp();
-	Account::_nbAccounts--; // a verif mais a priori ne sert a rien
+	Account::_nbAccounts--;
 
 	std::cout << "index:" << this->_accountIndex\
 	<< ";amount:" << this->_amount\
@@ -31,25 +38,24 @@ Account::~Account(void) {
 	return ;
 }
 
-/* ACCES AUX FONCTIONS NON MEMBRES DE L INSTANCE */
+/* Functions that are not members of the current class instance (static) */
 
-
-int	Account::getNbAccounts(void) { // ne sert a rien
+int	Account::getNbAccounts(void) {
 
 	return (Account::_nbAccounts);
 }
 
-int	Account::getTotalAmount(void) { // ne sert a rien
+int	Account::getTotalAmount(void) {
 
 	return (Account::_totalAmount);
 }
 
-int	Account::getNbDeposits(void) { // ne sert a rien
+int	Account::getNbDeposits(void) {
 
 	return (Account::_totalNbDeposits);
 }
 
-int	Account::getNbWithdrawals(void) { // ne sert a rien
+int	Account::getNbWithdrawals(void) {
 
 	return (Account::_totalNbWithdrawals);
 }
@@ -71,7 +77,7 @@ void	Account::_displayTimestamp(void) {
 	return ;
 }
 
-/* ACCES AUX FONCTIONS MEMBRES DE L INSTANCE */
+/* Functions that are members of the current class instance (non-static) */
 
 void	Account::makeDeposit(int deposit) {
 
@@ -115,7 +121,7 @@ bool	Account::makeWithdrawal(int withdrawal) {
 	}
 }
 
-int	Account::checkAmount(void) const { // ne sert a rien
+int	Account::checkAmount(void) const {
 
 	return (this->_amount);
 }
@@ -130,7 +136,7 @@ void	Account::displayStatus(void) const {
 	<< std::endl;
 }
 
-/* INIT DES ATTRIBUTS NON MEMBRES */
+/* Initialization of non-members attributes (static) */
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
