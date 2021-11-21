@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 22:51:52 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/21 23:00:26 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "HumanA.hpp"
 
-// pk je me fais chier = is je ne passe pas addresse de weapon (ptr ou ref)
-// => je cree une copie de class weapon => je cree donc deux fois cette class => redondant
+/* The address of the object weapon (pointer or reference) is passed as argument in constructor */
+/* without it, we would be creating a copy of the object meaning it would be created twice */
+
 HumanA::HumanA( std::string name, Weapon &weapon ) : _name(name), _weapon(weapon) {
 	
 	return ;
@@ -19,17 +32,11 @@ void	HumanA::attack(void) const {
 	return ;
 }
 
-// std::string HumanA::getName(void) const {
-	
-// }
-
-// Weapon HumanA::getWeapon(void) const {
-	
-// }
+/* Here we take the address of weapon object by reference */
 
 void	HumanA::setWeapon(Weapon &weapon) {
 	
-	this->_weapon = weapon; // ref prend adresse de la value passee en param
+	this->_weapon = weapon;
 
 	return ;
 }

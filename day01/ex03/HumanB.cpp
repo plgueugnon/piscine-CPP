@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 23:07:41 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/21 23:07:41 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "HumanB.hpp"
 
 HumanB::HumanB( std::string name ) : _name(name) {
@@ -17,17 +29,11 @@ void	HumanB::attack(void) const {
 	return ;
 }
 
-// std::string HumanA::getName(void) const {
-	
-// }
-
-// Weapon HumanA::getWeapon(void) const {
-	
-// }
+/* Here it is equivalent to saying &b = a then *ptr = &b */
 
 void	HumanB::setWeapon(Weapon &weapon) {
 	
-	this->_weapon = &weapon; // ref prend adresse de la value passee en param
+	this->_weapon = &weapon;
 
 	return ;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 22:48:53 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/21 22:48:54 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ZOMBIE_H
 # define ZOMBIE_H
 
@@ -8,7 +20,7 @@ class Zombie {
 
 private:
 
-	std::string	_name; // a priori pas possible const voir lors compil // poss par contre si init par constructeur
+	std::string	_name;
 
 public:
 
@@ -16,7 +28,7 @@ public:
 	void	setName( const std::string name, int N );
 
 	Zombie( std::string zombie_name );
-	Zombie( void ); // necessaire de faire un constructeur par defaut ici
+	Zombie( void );
 	~Zombie( void );
 
 };

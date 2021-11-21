@@ -1,19 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 23:03:08 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/21 23:08:38 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-// dans les deux cas je suis obligé de passer une adresse car sinon je cree un doublon / copie de weapon
+/* in both cases we have to take the address of the object otherwise it would be created twice */
 
 int	main( void ) {
 	{
-		// ref ici obligatoire car j'utilise une init dans constructeur of ref => obligatoirement init lors de sa creation
 		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club); // conversion implicite en ref (pas visible depuis main)
+		HumanA bob("Bob", club);
 		bob.attack();
 		club.setType("some other type of club");
 		bob.attack();
 	}
-	// par elimination, puisque par ref avant, par ptr ici
+
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");

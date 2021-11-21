@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 22:47:10 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/21 22:47:23 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 Zombie::Zombie( std::string zombie_name ) : _name( zombie_name ) {
@@ -7,7 +19,7 @@ Zombie::Zombie( std::string zombie_name ) : _name( zombie_name ) {
 	return ;
 }
 
-Zombie::Zombie( void ) { // constructeur par defaut - ne fait rien et est appele si 0 arg
+Zombie::Zombie( void ) {
 
 	return ;
 }

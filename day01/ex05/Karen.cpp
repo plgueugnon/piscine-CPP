@@ -1,4 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Karen.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 23:16:01 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/21 23:38:02 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Karen.hpp"
+
+/******************************************************************************/
+/* Syntax reminder :														  */
+/* void (*f)( void )) = generic function pointer of type void                 */
+/* void (class::*f)( void ) = pointer on a function member of class which	  */
+/* in both this cases, no argument is taken									  */
+/* class member functions pointed by f must not take any argument and have	  */
+/* the same return value otherwise it will not compile						  */
+/* f = &funct or f = funct means giving the address of funct to f pointer	  */
+/******************************************************************************/
 
 Karen::Karen( void )  {
 
@@ -10,25 +32,26 @@ Karen::~Karen( void ) {
 	return ;
 }
 
-/* RAPPEL DE SYNTAXE */
-/* void (*f)( void )) = ptr de fonction generique de type void et ne prenant pas d'arg */
-/* void (class::*f)( void ) = ptr sur fonction membre de class ne prenant pas d'arg */
-/* NB les fonctions membres de la class pointe par f devront ne pas prendre d'arg et avoir meme valeur retour sinon pas poss */
-/* f = &funct ou f = funct == init du ptr de fonction sur l'adresse de funct */
-
+/******************************************************************************/
+/* To understand Karen::complain function syntax :							  */
+/* First with "typedef void (Karen::*action)( void )"" = we create a void 	  */
+/* pointer named action														  */
+/* Then, with "action say[]"" we create an array of function pointers in	  */
+/* which we register the address of "Karen actions" function				  */
+/* By doing this "(this->*(say[i]))()" or "(*this.*(say[i]))()" we access the */
+/* member function pointed at, by dereferencing "this" pointer				  */
+/* As member functions we used only have void parameters, it is not possible  */
+/* to initialize an array of function pointer as such : "action action[4]"	  */
+/******************************************************************************/
 
 void	Karen::complain(std::string level) {
 	
-	typedef void (Karen::*action)( void ); // creation d'un pointeur de type void appelle action
+	typedef void (Karen::*action)( void );
 	std::string input [] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-	action say[] = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error }; // je cree un tableau de ptr de fonction de type Karen::action et y place les addresses des fonction membres
+	action say[] = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error };
 	for (int i = 0; i < 4; i++)
 		if (input[i] == level)
-			(this->*(say[i]))(); // ptr this pointe sur tableau derefence sur un pointeur de fonction membre
-			// (*this.*(say[i]))(); // autre ecriture possible en dereferençant le ptr this
-	// typedef void (Karen::*action)(std::string level); // creation d'un pointeur de fonction nomme action et typedef action
-	// action action[4] = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error}; // approche impossible car fonctions ont uniquement un param void
-
+			(this->*(say[i]))();
 	return ;
 }
 
