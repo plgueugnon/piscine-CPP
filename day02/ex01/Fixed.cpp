@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 10:52:47 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 12:21:47 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed( void ) : _fixed(0) {
@@ -24,26 +36,23 @@ Fixed::~Fixed( void ) {
 
 Fixed & Fixed::operator=( Fixed const &rhs ) {
 
-	std::cout << "Assignation operator called" << std::endl;
-	this->_fixed = rhs.getRawBits();
-	// poss ecrire "_fixed = rhs.getRawBits();"
-
+	if ( this != &rhs )
+	{
+		std::cout << "Assignation operator called" << std::endl;
+		this->_fixed = rhs.getRawBits();
+	}
 	return ( *this );
 }
 
-// le tri entre les constructeurs est fait automatiquement si int ou float entre
-Fixed::Fixed(const float f) {
+Fixed::Fixed( const float f ) {
 
 	std::cout << "Float constructor called" << std::endl;
-	//_fixed <<= 8; // si 10 => 10.00000000 => en int = 30000000 car int code en 4 octet car int dans 2e octet => 1 er octet vide
-	_fixed = std::roundf((1 << _bits) * f); // si 10.5 => 10.5 en flottant => on extrait partie entiere on la place dans le 2e octet
-	
-	// std::cout << std::bitset<32>(_fixed) << std::endl; // affiche les bits completement
+	_fixed = std::roundf((1 << _bits) * f);
 	
 	return ;
 }
 
-Fixed::Fixed(const int i) {
+Fixed::Fixed( const int i ) {
 
 	std::cout << "Int constructor called" << std::endl;
 	_fixed = i << _bits;
@@ -51,8 +60,6 @@ Fixed::Fixed(const int i) {
 }
 
 int	Fixed::getRawBits( void ) const {
-
-	// std::cout << "getRawBits member function called" << std::endl;
 
 	return ( this->_fixed );
 }
@@ -64,19 +71,19 @@ void	Fixed::setRawBits( int const raw ) {
 	return ;
 }
 
-float	Fixed::toFloat(void) const {
+float	Fixed::toFloat( void ) const {
 
-	return ((float)_fixed / (float)(1 << _bits)); // on recupere le float en decalant les bits dans l'autres sens puis en castant en float
+	return ((float)_fixed / (float)(1 << _bits));
 }
 
-int	Fixed::toInt(void) const {
+int	Fixed::toInt( void ) const {
 
 	return (_fixed >> _bits);
 }
 
-std::ostream& operator<<(std::ostream &o, Fixed const &rhs) {
+std::ostream& operator<<( std::ostream &o, Fixed const &rhs ) {
 
-	o << rhs.toFloat(); // a modif
+	o << rhs.toFloat();
 	return ( o );
 }
 

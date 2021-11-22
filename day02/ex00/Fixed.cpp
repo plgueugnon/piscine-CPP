@@ -1,4 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 10:34:32 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 10:48:35 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
+
+/* ************************************************************************** */
+/* what is fixed point number representation :								  */
+/* https://inst.eecs.berkeley.edu//~cs61c/sp06/handout/fixedpt.html			  */
+/* ************************************************************************** */
 
 Fixed::Fixed( void ) : _fixed(0) {
 
@@ -10,7 +27,7 @@ Fixed::Fixed( void ) : _fixed(0) {
 Fixed::Fixed( Fixed const &src ) {
 	
 	std::cout << "Copy constructor called" << std::endl;
-	*this = src; // equivaut a ecrire a = b donc => appel de la surchage = qui elle meme appelle getRawBits
+	*this = src;
 
 	return ;
 }
@@ -22,29 +39,14 @@ Fixed::~Fixed( void ) {
 	return ;
 }
 
-// 1 + 1 = notation infixe (car + au milieu)
-// + 1 1 = notation prefixe
-// 1 1 + = notation postfixe
-
-// operator => permet declarer quel signe est surcharge
-// rhs = right hand sign
-// prend en param l'instance courante (this) et une reference sur l'instance courante
-// va modifier l'instance courante
-// on va renvoyer l'instance courante car on peut ecrire a = b = c si void => pas possible chainer assignation
-
-
-// pk rhs => right hand side => car operateur d'assignation => on prend la valeur la plus a droite
-// et on met a jour la valeur juste a gauche 
-// b = a revient a dire b.operator=(a)
-// NB en cas de deep copy (avec new) => verifier que qu'il n'y a pas de self assignment sinon a = a => BOOM
 Fixed & Fixed::operator=( Fixed const &rhs ) {
 
-	std::cout << "Assignation operator called" << std::endl;
-	this->_fixed = rhs.getRawBits(); // rhs = addresse de l'objet source de la copie, par sa fonction membre j'accede a la valeur que je souhaite copier dans
-	// dans l'instance de class du meme type
-	// avec this j'accede a la valeur de la class courante
-
-	return ( *this ); // je renvoie une reference sur l'instance courante / ref to myself => retour de valeur lhs = a savoir objet d'appel
+	if ( this != &rhs )
+	{
+		std::cout << "Assignation operator called" << std::endl;
+		this->_fixed = rhs.getRawBits();
+	}
+	return ( *this );
 }
 
 int	Fixed::getRawBits( void ) const {
@@ -61,4 +63,4 @@ void	Fixed::setRawBits( int const raw ) {
 	return ;
 }
 
-int	Fixed::_fractionnal = 8; // init tjrs a 8 de la static
+int	Fixed::_fractionnal = 8;

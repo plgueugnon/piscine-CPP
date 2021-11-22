@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 11:01:38 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 11:45:20 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FIXED_H__
 # define __FIXED_H__
 
@@ -8,43 +20,36 @@ class Fixed {
 
 public:
 
-// methods
-	// Canonical form //
-	Fixed( void ); // constructeur par defaut
-	Fixed( Fixed const &src ); // constructeur par copie prenant une instance de la class pour en faire une copie
-	~Fixed( void ); // destructeur par defaut -> a faire avec virtual plus tard
-
-	Fixed	&operator=( Fixed const &rhs ); // fonction de surcharge de l'opérateur =
+	/* Canonical form */
+	Fixed( void );
+	Fixed( Fixed const &src );
+	~Fixed( void );
+	Fixed	&operator=( Fixed const &rhs );
 	
-	// Non canonical form //
+	/* Non canonical form */
 	Fixed( const float f);
 	Fixed( const int i );
 
-
 	int	getRawBits( void ) const;
-	void	setRawBits(int const raw);
+	void	setRawBits( int const raw );
 
 	float	toFloat( void ) const;
 	int	toInt( void ) const;
 
-
-// attributes
-
 private:
 
-// methods
-
-// attributes
 	int	_fixed;
 	static int	_bits;
 
 };
 
-// lhs = membre gauche et rhs = membre droite
-// pas possible de prendre lhs / sa propre class en valeur retour => car ostream gere par class ostream et qu'on ne peut pas en modifier le code
-// plutot que de faire une surcharge sur fonction membre on fait une simple fonction de surcharge
-// on fait donc fonction qui renvoie ref sur class ostream, avec en param une ref sur instance de ostream et en 2e param ma class
-// permet de chainer les redirections pour les affichages
+/* ************************************************************************** */
+/* lhs is the object to the left and rhs the object to the right			  */
+/* if the function were a member of a class object the overload of ostream	  */
+/* would not work as it would mean return lhs to itself						  */
+/* To resolve this issue we create an overload function outside of the class, */
+/* taking a reference to class ostream and a reference to our own class		  */
+/* ************************************************************************** */
 
 std::ostream &operator<<( std::ostream &o, Fixed const &rhs );
 

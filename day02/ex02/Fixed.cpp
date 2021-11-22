@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 12:25:11 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 12:30:38 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed( void ) : _fixed(0) {
@@ -25,7 +37,7 @@ Fixed::~Fixed( void ) {
 Fixed &Fixed::operator=( Fixed const &rhs ) {
 
 	std::cout << "Assignation operator called" << std::endl;
-	if (this == &rhs) // protection against self assignment
+	if (this == &rhs)
 		return ( *this );
 	this->_fixed = rhs.getRawBits();
 
@@ -35,7 +47,7 @@ Fixed &Fixed::operator=( Fixed const &rhs ) {
 bool	Fixed::operator==( Fixed const &rhs ) const {
 
 	std::cout << "Equality operator called" << std::endl;
-	if ( this->toFloat() == rhs.toFloat() ) // revient à dire is lhs == rhs ?
+	if ( this->toFloat() == rhs.toFloat() )
 		return ( true );
 	else
 		return ( false );
@@ -44,7 +56,7 @@ bool	Fixed::operator==( Fixed const &rhs ) const {
 bool	Fixed::operator!=( Fixed const &rhs ) const {
 
 	std::cout << "Non equal operator called" << std::endl;
-	if ( this->toFloat() != rhs.toFloat() ) // revient à dire is lhs != rhs ?
+	if ( this->toFloat() != rhs.toFloat() )
 		return ( true );
 	else
 		return ( false );
@@ -53,7 +65,7 @@ bool	Fixed::operator!=( Fixed const &rhs ) const {
 bool	Fixed::operator<( Fixed const &rhs ) const {
 
 	std::cout << "lesser than operator called" << std::endl;
-	if ( this->toFloat() < rhs.toFloat() ) // revient à dire is lhs < rhs ?
+	if ( this->toFloat() < rhs.toFloat() )
 		return ( true );
 	else
 		return ( false );
@@ -61,7 +73,7 @@ bool	Fixed::operator<( Fixed const &rhs ) const {
 bool	Fixed::operator>( Fixed const &rhs ) const {
 
 	std::cout << "greater than operator called" << std::endl;
-	if ( this->toFloat() > rhs.toFloat() ) // revient à dire is lhs > rhs ?
+	if ( this->toFloat() > rhs.toFloat() )
 		return ( true );
 	else
 		return ( false );
@@ -69,75 +81,66 @@ bool	Fixed::operator>( Fixed const &rhs ) const {
 bool	Fixed::operator<=( Fixed const &rhs ) const {
 
 	std::cout << "lesser or equal operator called" << std::endl;
-	if ( this->toFloat() <= rhs.toFloat() ) // revient à dire is lhs <= rhs ?
+	if ( this->toFloat() <= rhs.toFloat() )
 		return ( true );
 	else
 		return ( false );
 }
 bool	Fixed::operator>=( Fixed const &rhs ) const {
 
-// a tester voir si pas preferable de le faire en int
 	std::cout << "greater or equal operator called" << std::endl;
-	if ( this->toFloat() != rhs.toFloat() ) // revient à dire is lhs >= rhs ?
+	if ( this->toFloat() != rhs.toFloat() )
 		return ( true );
 	else
 		return ( false );
-	// autre ecriture possible =
-	// return ( this->toFloat() != rhs.toFloat() ); => bool implicite
 }
 
 Fixed	Fixed::operator+( Fixed const &rhs ) {
 
-	return (this->toFloat() + rhs.toFloat() ); // lhs + rhs	
+	return (this->toFloat() + rhs.toFloat() );
 }
 
 Fixed	Fixed::operator-( Fixed const &rhs ) {
 
-	return (this->toFloat() - rhs.toFloat() ); // lhs - rhs	
+	return (this->toFloat() - rhs.toFloat() );	
 }
 
 Fixed	Fixed::operator*( Fixed const &rhs ) {
 
-	return (this->toFloat() * rhs.toFloat() ); // lhs * rhs	
+	return (this->toFloat() * rhs.toFloat() );
 }
 
 Fixed	Fixed::operator/( Fixed const &rhs ) {
 
-	return (this->toFloat() / rhs.toFloat() ); // lhs / rhs	
+	return (this->toFloat() / rhs.toFloat() );
 }
 
-// prefix -> ++a
-/* NB a++ = affecter puis incrementer
-++a = incrementer puis affecter revient a dire a += 1
-i = 1; j = i++; => i = 2 et j = 1
-i = 1; j = ++i; => i = 2 et j = 2 
-Dans le cas du prefix on incremente l'objet puis on renvoie une reference vers l'objet
-*/
+/* ************************************************************************** */
+/* Small reminder of how prefix and suffix increment work:					  */
+/* i = 1; j = i++; => i = 2 et j = 1										  */
+/* i = 1; j = ++i; => i = 2 et j = 2										  */
+/* ************************************************************************** */
+
+/* prefix (++a) : here we increment by the smallest value possible on 8 bits */
 Fixed&	Fixed::operator++( void ) {
 
 	std::cout << "prefix ++ operator called" << std::endl;
-	// _fixed += (1 << _bits) * 1; // = j'incremente de 1.0f
-	// *this = *this + Fixed(1.0f / (1 << _bits)); // increment de la  plus petite valeur possible sur 8 bits
-	*this = *this + (float)1/256; // autre ecriture possible
+	*this = *this + (float)1/256;
 	return ( *this );
 }
 
-// par defaut obligatoire d'ecrire int en param, meme si pas utilise
-// le int sert a distinguer postfix de prefix
-// postfix -> a++
-// ici on cree une copie de l'objet, on incremente la valeur de l'objet lui meme puis
-// on renvoie une copie de l'objet
+/* postfix (a++) */
 Fixed	Fixed::operator++( int ) {
 
 	Fixed	tmp( *this );
-	++*this; // appelle l'operateur d'increment prefix
+	++*this;
 	return ( tmp );
 }
 
-// prefix -> --a
+/* prefix (--a) : here we decrement by 1.0f */
 Fixed&	Fixed::operator--( void ) {
 
-	_fixed -= (1 << _bits) * 1; // = je decremente de 1.0f
+	_fixed -= (1 << _bits) * 1;
 	return ( *this );
 }
 

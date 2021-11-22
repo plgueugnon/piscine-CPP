@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 10:13:06 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 10:13:06 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FIXED_H__
 # define __FIXED_H__
 
@@ -7,25 +19,18 @@ class Fixed {
 
 public:
 
-// methods
-	// Canonical form //
-	Fixed( void ); // constructeur par defaut
-	Fixed( Fixed const &src ); // constructeur par copie prenant une instance de la class pour en faire une copie
-	~Fixed( void ); // destructeur par defaut -> a faire avec virtual plus tard
+	/* Canonical form */
+	Fixed( void );
+	Fixed( Fixed const &src );
+	~Fixed( void );
+	Fixed	&operator=( Fixed const &rhs );
 
-	Fixed	&operator=( Fixed const &rhs ); // fonction de surcharge de l'opérateur =
-	
 	// Non canonical form //
 	int	getRawBits( void ) const;
 	void	setRawBits(int const raw);
 
-// attributes
-
 private:
 
-// methods
-
-// attributes
 	int	_fixed;
 	static int	_fractionnal;
 

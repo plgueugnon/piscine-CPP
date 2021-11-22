@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 12:31:50 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 12:31:51 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FIXED_H__
 # define __FIXED_H__
 
@@ -8,15 +20,13 @@ class Fixed {
 
 public:
 
-// methods
-	// Canonical form //
+	/* Canonical form */
 	Fixed( void );
 	Fixed( Fixed const &src );
 	~Fixed( void );
-
 	Fixed	&operator=( Fixed const &rhs );
-	
-	// Non canonical //
+
+	/* Non canonical */
 	Fixed( const float f);
 	Fixed( const int i );
 
@@ -30,8 +40,8 @@ public:
 	Fixed	operator-( Fixed const &rhs );
 	Fixed	operator*( Fixed const &rhs );
 	Fixed	operator/( Fixed const & rhs );
-	Fixed	&operator++( void ); // Prefix increment operator.
-	Fixed	operator++(int); // Postfix increment operator.
+	Fixed	&operator++( void );
+	Fixed	operator++(int);
 	Fixed	&operator--( void );
 	Fixed	operator--(int);
 
@@ -46,13 +56,8 @@ public:
 	static const Fixed&	max( Fixed const &lhs, Fixed const &rhs );
 	static const Fixed&	min( Fixed const &lhs, Fixed const &rhs );
 
-// attributes
-
 private:
 
-// methods
-
-// attributes
 	int	_fixed;
 	static int	_bits;
 
