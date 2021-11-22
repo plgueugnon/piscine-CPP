@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 13:48:12 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 13:48:14 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 /* Canonical */
@@ -10,8 +22,6 @@ ScavTrap::ScavTrap( void ) {
 
 ScavTrap::~ScavTrap( void ) {
 
-	// ClapTrap::~ClapTrap(); // a tester
-	// std::cout << "ScavTrap destructor called" << std::endl;
 	std::cout << "ScavTrap " << _name << " finally died thank god !"<< "(Destructor called)" << std::endl;
 	return ;
 }
@@ -36,7 +46,6 @@ ScavTrap::ScavTrap( ScavTrap const &src ) {
 
 void	ScavTrap::guardGate( void ) {
 
-	// ScavTrap::getName() = autre ecriture possible
 	std::cout << "ScavTrap " << _name << " has enterred gate keeper mode" << std::endl;
 
 	return ;

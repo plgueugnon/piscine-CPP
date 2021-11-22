@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 13:51:11 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 13:51:13 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 
@@ -36,7 +48,7 @@ public:
 	void	setEnergyPoints( unsigned int );
 	void	setAttackDamage( unsigned int );
 
-// it would be easier to have all here as protected to avoid the limitation of private (and the use of getter and setter)
+/* it is easier to have all here as protected to avoid the limitation of private (and the use of getter and setter) */
 protected: 
 
 	std::string	_name;

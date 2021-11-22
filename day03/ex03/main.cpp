@@ -1,5 +1,15 @@
-// #include "ScavTrap.hpp"
-// #include "FragTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 13:57:57 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 13:58:10 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "DiamondTrap.hpp"
 
 void	test_ex00( void ) {
@@ -52,7 +62,7 @@ void	test_ex03( void ) {
 	std::cout << "\033[33m..................... Begining test ex03 .....................\033[0m" << std::endl;
 	DiamondTrap	Belzebuth("Belzebuth");
 	Belzebuth.ClapTrap::attack("nothing");
-	Belzebuth.guardGate(); // autre ecriture possible 	Belzebuth.ScavTrap::guardGate();
+	Belzebuth.guardGate();
 	Belzebuth.highFivesGuys();
 	Belzebuth.whoAmI();
 	std::cout << "\n" << std::endl;

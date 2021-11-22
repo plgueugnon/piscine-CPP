@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 13:42:47 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 13:42:48 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 /* Canonical */
@@ -10,29 +22,16 @@ ScavTrap::ScavTrap( void ) {
 
 ScavTrap::~ScavTrap( void ) {
 
-	// ClapTrap::~ClapTrap(); // a tester
-	// std::cout << "ScavTrap destructor called" << std::endl;
 	std::cout << "ScavTrap " << _name << " finally died thank god !"<< "(Destructor called)" << std::endl;
 	return ;
 }
 
 ScavTrap	&ScavTrap::operator=( ScavTrap const &rhs ) {
-// autre ecriture = reutilise la fonction de ClapTrap
+
 	std::cout << "(ScavTrap assignement operator called)" << std::endl;
 	if (this != &rhs )
 		ClapTrap::operator=(rhs);
-		// return ( *this );
-	// else
-	// {
-	// 	_AttackDamage = rhs.getAttackDamage();
-	// 	_HitPoints = 100;
-	// 	_EnergyPoints = rhs.getEnergyPoints();
-	// 	_name = 
-	// 	this->setAttackDamage(); 
-	// 	this->setEnergyPoints();
-	// 	this->setHitpoints(rhs.getHitpoints());
-	// 	this->setName(rhs.getName());
-	// }
+
 	return ( *this );
 }
 
@@ -48,7 +47,6 @@ ScavTrap::ScavTrap( ScavTrap const &src ) {
 
 void	ScavTrap::guardGate( void ) {
 
-	// ScavTrap::getName() // autre ecriture possible
 	std::cout << "ScavTrap " << _name << " has enterred gate keeper mode" << std::endl;
 
 	return ;

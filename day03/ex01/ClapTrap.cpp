@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 13:43:56 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/22 13:44:56 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 /* Canonical */
-
 ClapTrap::ClapTrap( void ) {
 
 	std::cout << "Default constructor called" << std::endl;
@@ -30,7 +41,7 @@ ClapTrap	&ClapTrap::operator=( ClapTrap const &rhs ) {
 	if ( this == &rhs )
 		return ( *this );
 	this->_name = rhs._name;
-	this->_AttackDamage = rhs._AttackDamage; // a tester
+	this->_AttackDamage = rhs._AttackDamage;
 	this->_EnergyPoints = rhs._EnergyPoints;
 	this->_HitPoints = rhs._HitPoints;
 
