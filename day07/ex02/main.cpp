@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 10:39:19 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 10:39:24 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Array.hpp"
 
@@ -14,7 +26,7 @@ int	main(int, char**) {
 		numbers[i] = value;
 		mirror[i] = value;
 	}
-	//SCOPE
+
 	{
 		Array<int> tmp = numbers;
 		Array<int> test(tmp);

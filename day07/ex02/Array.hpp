@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 10:39:32 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 10:40:16 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __ARRAY_H__
 #define __ARRAY_H__
 
@@ -41,7 +53,8 @@ public:
 		return ;
 	}
 
-	Array( Array const &src ) : _max(src._max) { // obligatoire d'allouer ici sinon copie de tab non existant
+	/* deep copy */
+	Array( Array const &src ) : _max(src._max) {
 		
 		_array = new T[_max];
 		for(unsigned int i = 0; i < _max; i++)

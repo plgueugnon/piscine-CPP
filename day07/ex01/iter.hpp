@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 10:38:44 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 10:38:58 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __ITER_H__
 #define __ITER_H__
 
@@ -14,7 +26,9 @@ void	iter( T *arr, size_t const size, void (&func)( T & ) ) {
 	return ;
 }
 
-/* Non mandatory - testing template specialization */
+/* ************************************************************************** */
+/* Non mandatory - testing template specialization							  */
+/* ************************************************************************** */
 template <typename T>
 void	iter( T *arr, size_t const size ) {
 
