@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   span.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 11:07:11 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 11:10:47 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "span.hpp"
 
 /* Canonical */
@@ -26,8 +38,6 @@ Span	&Span::operator=( Span const &rhs ) {
 	{
 		_size = rhs._size;
 		std::copy(rhs._v.begin(), rhs._v.end(), _v.begin());
-		// for(std::vector<int>::iterator it = _v.begin(); it != _v.end(); it++ )
-		// 	_v.push_back(rhs._v.)
 	}
 
 	return ( *this );

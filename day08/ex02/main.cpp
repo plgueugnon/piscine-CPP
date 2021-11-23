@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 11:22:10 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 11:24:32 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "mutantstack.hpp"
 
 int	main( void ) {
@@ -11,7 +23,7 @@ int	main( void ) {
 	std::cout << mstack.top() << std::endl;
 
 	mstack.pop();
-
+	std::cout << ".........................." << std::endl;
 	std::cout << "____getting size value____" << std::endl;
 	std::cout << mstack.size() << std::endl;
 
@@ -25,12 +37,17 @@ int	main( void ) {
 
 	++it;
 	--it;
-
+	std::cout << ".........................." << std::endl;
 	std::cout << "____listing all values____" << std::endl;
 	while ( ++it != ite )
 		std::cout << *it << std::endl;
 
-	/* pour que cet exemple marche on est oblige d'heriter publiquement de stack pour faire cet upcast */
+	std::cout << ".........................." << std::endl;
+	/* ************************************************************************** */
+	/* for this example to work we have to pubicly inherit form std::stack to	  */
+	/* allow this upcast														  */
+	/* ************************************************************************** */
 	std::stack<int>	s(mstack);
+
 	return ( 0 );
 }
