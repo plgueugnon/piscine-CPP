@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 10:16:35 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 10:18:06 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <string>
 
@@ -9,13 +21,19 @@ typedef struct	Data {
 
 }				Data;
 
-/* takes a ptr of type Data and returns it converted in type uintptr_t */
+
+/* ************************************************************************** */
+/* takes a ptr of type Data and returns it converted in type uintptr_t 		  */
+/* ************************************************************************** */
 uintptr_t	serialize( Data	*ptr ) {
 
 	return ( reinterpret_cast<uintptr_t>(ptr) );
 }
 
-/* takes a value of type uintptr_t and returns it converted as a ptr of type Data */
+/* ************************************************************************** */
+/* takes a value of type uintptr_t and returns it converted as a ptr of		  */
+/* type Data																  */
+/* ************************************************************************** */
 Data	*deserialize( uintptr_t raw ) {
 
 	return ( reinterpret_cast<Data*>(raw) );

@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 10:18:24 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 10:19:22 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include "Base.hpp"
 
-/* generate a random number between 0 and 2 */
+/* ************************************************************************** */
+/* generate a random number between 0 and 2									  */
+/* ************************************************************************** */
 Base	*generate( void ) {
 
 	int	random = rand() % 3;
@@ -19,7 +33,10 @@ Base	*generate( void ) {
 	return ( NULL );
 }
 
-/* cascade of encapsulated try to successively check each class type by tryng to cast it */
+/* ************************************************************************** */
+/* cascade of encapsulated try to successively check each class type by		  */
+/* tryng to cast it															  */
+/* ************************************************************************** */
 void	identify( Base *p ) {
 
 	Base *tmp;
