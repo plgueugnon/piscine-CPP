@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 10:01:56 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 10:01:56 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FORM_H__
 #define __FORM_H__
 
@@ -9,7 +21,8 @@
 #define MIN 150
 #define MAX 1
 
-class Bureaucrat; // forward declaration
+/* forward declaration */
+class Bureaucrat;
 
 class Form {
 
@@ -29,7 +42,7 @@ public:
 	bool	getSigningStatus( void ) const;
 	std::string	getTarget( void ) const;
 
-	void	setSignGrade( int grade ); // nb pas de setname car const
+	void	setSignGrade( int grade );
 	void	setExecGrade( int grade );
 	void	setSigningStatus( bool status );
 	void	setTarget( std::string target );
@@ -37,7 +50,8 @@ public:
 	void	beSigned( Bureaucrat &b );
 	virtual bool	execute( Bureaucrat const & executor ) const = 0;
 
-	class GradeTooHighException; // forward declaration
+	/* forward declaration */
+	class GradeTooHighException;
 	class GradeTooLowException;
 	class FormNotSignedException;
 

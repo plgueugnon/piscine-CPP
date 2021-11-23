@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:55:52 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:55:52 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 /* Canonical */
@@ -119,7 +131,7 @@ void	Bureaucrat::signForm( Form &f ) {
 	return ;
 }
 
-void	Bureaucrat::executeForm( Form const &form ) const { // NB si valeur est const => il faut que fonction soit const aussi
+void	Bureaucrat::executeForm( Form const &form ) const {
 
 	try
 	{

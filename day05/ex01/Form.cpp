@@ -1,7 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:50:47 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:53:44 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 
 /* Canonical */
-Form::Form( void ) : _name("unknown"), _signGrade(150), _execGrade(150) { // NB attention a init dans ordre declaration hpp
+
+/* ************************************************************************** */
+/* Values have to be initialized in the same order as they are declared in	  */
+/* the .hpp file															  */
+/* ************************************************************************** */
+
+Form::Form( void ) : _name("unknown"), _signGrade(150), _execGrade(150) {
 
 	std::cout << "Default form constructor called" << std::endl;
 

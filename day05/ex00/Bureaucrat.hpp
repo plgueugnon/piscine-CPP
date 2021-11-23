@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:48:22 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:48:42 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __BUREAUCRAT_H__
 #define __BUREAUCRAT_H__
 
@@ -22,7 +34,8 @@ public:
 	void	incrementGrade( void );
 	void	lowerGrade( void );
 
-	class GradeTooHighException; // forward declaration
+	/* forward declaration */
+	class GradeTooHighException;
 	class GradeTooLowException;
 
 protected:

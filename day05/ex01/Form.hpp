@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:51:42 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:51:50 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FORM_H__
 #define __FORM_H__
 
@@ -6,7 +18,8 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 
-class Bureaucrat; // forward declaration
+/* forward declaration */
+class Bureaucrat;
 
 class Form {
 
@@ -27,7 +40,8 @@ public:
 
 	void	beSigned( Bureaucrat &b );
 
-	class GradeTooHighException; // forward declaration
+	/* forward declaration */
+	class GradeTooHighException;
 	class GradeTooLowException;
 
 private:
