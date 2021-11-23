@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:42:55 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:42:55 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __CHARACTER_H__
 #define __CHARACTER_H__
 
@@ -10,7 +22,7 @@ class Character : public ICharacter {
 private:
 
 	std::string	_name;
-	AMateria	*_inventory[INDEX]; // array of AMateria ptr of 4
+	AMateria	*_inventory[INDEX];
 
 public:
 

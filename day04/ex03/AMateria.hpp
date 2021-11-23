@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:28:37 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:28:38 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __AMATERIA_H__
 #define __AMATERIA_H__
 
 #include <iostream>
 #include <string>
-#include "ICharacter.hpp" // a priori peut fonctionner sans
+#include "ICharacter.hpp"
 
 class ICharacter;
 
@@ -23,7 +35,7 @@ public:
 
 	/* Non canonical */
 	AMateria( std::string const &type );
-	std::string const	&getType( void ) const; // get Materia type
+	std::string const	&getType( void ) const;
 	virtual AMateria	*clone( void ) const = 0;
 	virtual void	use( ICharacter	&target );
 

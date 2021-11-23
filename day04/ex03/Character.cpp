@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:28:50 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:32:47 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Character.hpp"
 
 /* Canonical */
@@ -12,7 +24,6 @@ Character::Character( void ) : _name("unknown") {
 
 Character::~Character( void ) {
 
-	// std::cout << "Character Destructor called" << std::endl;
 	std::cout << _name << " just died (destructor called)" << std::endl;
 	for (int i = 0; i < INDEX; i++)
 		if ( _inventory[i] )
@@ -33,14 +44,12 @@ Character::Character( Character const &src ) {
 
 Character	&Character::operator=( Character const &rhs ) {
 
-		// _name = rhs._name; // il ne va pas changer de nom
-	std::cout << "DEBUG Character equal operator called" << std::endl;
 	if ( this != &rhs )
 		for (int i = 0; i < INDEX; i++)
 		{
-			delete _inventory[i]; // delete Materia old character
+			delete _inventory[i];
 			if ( rhs._inventory[i] )
-				_inventory[i] = rhs._inventory[i]->clone(); // cree une deep copy de la materia
+				_inventory[i] = rhs._inventory[i]->clone();
 		}
 
 	return ( *this );
@@ -65,7 +74,7 @@ void	Character::equip( AMateria *m ) {
 
 	for(int i = 0; i < INDEX; i++)
 	{	if ( _inventory[i] == m )
-			return ; // do not equip if already here
+			return ;
 		if ( _inventory[i] == NULL )
 		{
 			_inventory[i] = m;
@@ -78,8 +87,11 @@ void	Character::equip( AMateria *m ) {
 	return ;
 }
 
-// must not unequip a materia not learned form MateriaSource
-void	Character::unequip( int idx ) { // attention aux def lost !
+/* ************************************************************************** */
+/* Must not unequip a materia not learned form MateriaSource				  */
+/* ************************************************************************** */
+
+void	Character::unequip( int idx ) {
 
 	if ( idx < 0 || idx >= INDEX )
 		return ;
@@ -92,7 +104,7 @@ void	Character::unequip( int idx ) { // attention aux def lost !
 
 void	Character::use( int idx, ICharacter &target ) {
 
-	if ( _inventory[idx] ) // possible ecrire !_inventory[idx]
+	if ( _inventory[idx] )
 		_inventory[idx]->use( target );
 
 	return ;

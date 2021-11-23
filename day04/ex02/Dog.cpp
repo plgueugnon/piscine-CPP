@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:19:24 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:19:25 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 /* Canonical */
@@ -5,7 +17,7 @@ Dog::Dog( void ) {
 
 	std::cout << "Dog default constructor called" << std::endl;
 	_type = "Dog";
-	_brain = new Brain(); // je cree brain
+	_brain = new Brain();
 
 	return ;
 }
@@ -26,13 +38,18 @@ Dog::Dog( Dog const &src ) {
 	return ;
 }
 
+/* ************************************************************************** */
+/* Necessary to use Brain class operator= to make a deep copy and to		  */
+/* dereference pointers (otherwise it will crash)							  */
+/* ************************************************************************** */
+
 Dog	&Dog::operator=( Dog const &rhs ) {
 
 	std::cout << "Dog equal operator called" << std::endl;
 	if ( this != &rhs )
 	{
 		_type = rhs._type;
-		*_brain = *rhs._brain; // necessaire de faire appel au operator= de brain pour une deep copy + si pas derefencé => pete a la figure
+		*_brain = *rhs._brain;
 	}
 
 	return ( *this );

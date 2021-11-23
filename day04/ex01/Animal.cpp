@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:06:29 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:06:30 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 /* Canonical */
@@ -23,7 +35,6 @@ Animal::Animal( Animal const &src ) {
 	return ;
 }
 
-// NB pas deep copy ici
 Animal	&Animal::operator=( Animal const &rhs ) {
 
 	std::cout << "Animal equal operator called" << std::endl;

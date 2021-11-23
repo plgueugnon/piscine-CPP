@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:19:40 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:19:40 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __DOG_H__
 #define __DOG_H__
 
@@ -19,7 +31,7 @@ public:
 	Dog	&operator=( Dog const &rhs );
 
 	/* Non canonical */
-	void	makeSound( void ) const; // NB pas necessaire d'indiquer virtual ici pour override Animal
+	void	makeSound( void ) const;
 	Brain	*getBrain( void ) const;
 	void	setBrain(  std::string s );
 

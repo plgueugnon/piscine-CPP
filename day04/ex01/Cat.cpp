@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:14:59 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:15:00 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 
 /* Canonical */
@@ -5,7 +17,7 @@ Cat::Cat( void ) {
 
 	std::cout << "Cat default constructor called" << std::endl;
 	_type = "Cat";
-	_brain = new Brain(); // je cree brain
+	_brain = new Brain();
 
 	return ;
 }
@@ -13,7 +25,7 @@ Cat::Cat( void ) {
 Cat::~Cat( void ) {
 
 	std::cout << "Cat destructor called" << std::endl;
-	delete _brain; // je delete brain
+	delete _brain;
 
 	return ;
 }

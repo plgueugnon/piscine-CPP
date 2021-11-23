@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:28:06 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:28:18 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AMateria.hpp"
 
 /* Canonical */
@@ -26,7 +38,6 @@ AMateria	&AMateria::operator=( AMateria const &rhs ) {
 
 	if (this != &rhs)
 		_type = rhs._type;
-	// std::cout << "DEBUG AMateria equal operator called" << std::endl;
 
 	return ( *this );
 }

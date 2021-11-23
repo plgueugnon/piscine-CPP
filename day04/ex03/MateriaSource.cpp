@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:40:49 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:40:49 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "MateriaSource.hpp"
 
 /* Canonical */
@@ -44,7 +56,7 @@ void	MateriaSource::learnMateria( AMateria *m ) {
 		if ( _storage[i] != m && _storage[i] == NULL )
 		{
 			_storage[i] = m;
-			// std::cout << "DEBUG " << _storage[i]->getType() << " as been stored !" << std::endl;
+			std::cout << "DEBUG " << _storage[i]->getType() << " as been stored !" << std::endl;
 			return ;
 		}
 	std::cout << "Source is full" << std::endl;

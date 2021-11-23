@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:35:14 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:35:15 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __ICHARACTER_H__
 #define __ICHARACTER_H__
 
 #include <string>
 #include "AMateria.hpp"
 
-class AMateria; // why ?
+class AMateria;
 
 class ICharacter {
 

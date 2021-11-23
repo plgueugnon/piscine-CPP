@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:12:45 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:14:39 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 /* Canonical */
@@ -5,7 +17,7 @@ Dog::Dog( void ) {
 
 	std::cout << "Dog default constructor called" << std::endl;
 	_type = "Dog";
-	_brain = new Brain(); // je cree brain
+	_brain = new Brain();
 
 	return ;
 }
@@ -21,16 +33,15 @@ Dog::~Dog( void ) {
 Dog::Dog( Dog const &src ) {
 
 	std::cout << "Dog copy constructor called" << std::endl;
-	// *this = new Dog();
-	// Dog *tmp = new Dog();
-	// *tmp = src;
-	// *this = *tmp;
-	// (void)src;
 	*this = src;
-	// *this = new src;
 
 	return ;
 }
+
+/* ************************************************************************** */
+/* Necessary to use Brain class operator= to make a deep copy and to		  */
+/* dereference pointers (otherwise it will crash)							  */
+/* ************************************************************************** */
 
 Dog	&Dog::operator=( Dog const &rhs ) {
 
@@ -38,7 +49,7 @@ Dog	&Dog::operator=( Dog const &rhs ) {
 	if ( this != &rhs )
 	{
 		Animal::operator=( rhs );
-		*_brain = *rhs._brain; // necessaire de faire appel au operator= de brain pour une deep copy + si pas derefencé => pete a la figure
+		*_brain = *rhs._brain;
 	}
 
 	return ( *this );

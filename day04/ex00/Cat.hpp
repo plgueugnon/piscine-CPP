@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:03:11 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:03:25 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __CAT_H__
 #define __CAT_H__
 
@@ -14,7 +26,7 @@ public:
 	Cat	&operator=( Cat const &rhs );
 
 	/* Non canonical */
-	void	makeSound( void ) const; // NB pas necessaire d'indiquer virtual ici pour override Animal
+	void	makeSound( void ) const;
 
 };
 

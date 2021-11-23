@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:34:54 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:34:55 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __ICE_H__
 #define __ICE_H__
 
 #include "AMateria.hpp"
 
-class Ice : public AMateria { // tester avec virtual
+class Ice : public AMateria {
 
 public:
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:34:09 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:34:43 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Ice.hpp"
 
 /* Canonical */
@@ -23,15 +35,19 @@ Ice::Ice( Ice const &src ) {
 	return ;
 }
 
+/* ************************************************************************** */
+/* While assigning a Materia to another, copying the type doesn’t make sense  */
+/* ************************************************************************** */
+
 Ice	&Ice::operator=( Ice const &rhs ) {
 
 	(void)rhs;
-// While assigning a Materia to another, copying the type doesn’t make sense ?
+
 	return ( *this );
 }
 
 /* Non canonical */
-Ice::Ice( std::string const & type ) : AMateria(type) { // a tester
+Ice::Ice( std::string const & type ) : AMateria(type) {
 
 	std::cout << "Ice constructor called" << std::endl;
 
@@ -40,7 +56,7 @@ Ice::Ice( std::string const & type ) : AMateria(type) { // a tester
 
 AMateria	*Ice::clone( void ) const {
 
-	return ( new Ice(_type) ); // a verifier
+	return ( new Ice(_type) );
 }
 
 void	Ice::use( ICharacter &target ) {

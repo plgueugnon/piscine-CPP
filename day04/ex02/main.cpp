@@ -1,13 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 09:19:52 by pgueugno          #+#    #+#             */
+/*   Updated: 2021/11/23 09:27:05 by pgueugno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Animal.hpp"
 
 int	main( void ) {
 
-	// Animal a; // instanciation de la class Animal seule impossible car classe abstraite
+/* ************************************************************************** */
+/* We can't instantiate an object of class Animal alone as it is an abstract  */
+/* class (it will not compile) but we can instantiate subclass Animal-Dog or  */
+/* Animal-Cat																  */
+/* ************************************************************************** */
 
-	// pas de probleme pour instancier les subclass de types Animal-Dog ou Animal-Cat
-	Animal	*Array[10]; // creation tableau de ptr de type animal
+	/* Animal a; */ /* (will not compile) */
+
+	Animal	*Array[10];
 	for (int i = 0; i < 10; i++)
 	{
 		if (i < 10 / 2)
@@ -27,20 +44,21 @@ int	main( void ) {
 	std::cout << dog1 << " " << dog1->getBrain() << " " << dog1->getBrain()->_ideas[0] << std::endl;
 	std::cout << dog2 << " " << dog2->getBrain() << " " << dog2->getBrain()->_ideas[0] << std::endl;
 
-	*dog2 = *dog1; // tres important de derefencer les pointeurs sans quoi changement adresse
-	// Dog *dog3( dog1 ); // ne fonctionne pas ??
+/* ************************************************************************** */
+/* Here we have to dereference pointers to avoid modifying their adresses	  */
+/* ************************************************************************** */
+
+	*dog2 = *dog1;
 
 	std::cout << "\n..After deep copy..\n" << std::endl;
 	std::cout << dog1 << " " << dog1->getBrain() << " " << dog1->getBrain()->_ideas[0] << std::endl;
 	std::cout << dog2 << " " << dog2->getBrain() << " " << dog2->getBrain()->_ideas[0] << std::endl;
-	// std::cout << dog3 << " " << dog3->getBrain() << " " << dog3->getBrain()->_ideas[0] << std::endl;
 
 	delete dog1;
 	delete dog2;
-	// delete dog3;
 
 	std::cout << "\n...............................................\n" << std::endl;
-	for (int j = 0; j < 10; j++) // suppression des ptr de class dans le tab
+	for (int j = 0; j < 10; j++)
 		delete Array[j];
 
 	return ( 0 );
